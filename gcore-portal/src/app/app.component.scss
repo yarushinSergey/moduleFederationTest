@@ -1,0 +1,75 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.sideContainer{
+  width: 96px; /* 0 width - change this with JavaScript */
+  position: relative;
+  top: 0; /* Stay at the top */
+  left: 0;
+  bottom: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: rgb(233, 233, 233);
+  box-sizing: border-box;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+  .sideContainer .logo {
+    flex-shrink: 0;
+    height: 84px;
+  }
+
+    .sideContainer .logo .logoImg{
+      background-image: url("../assets/logo.png");
+      height: 100%;
+      background-position: center;
+      background-origin: padding-box;
+      background-repeat: no-repeat;
+    }
+
+  .sideContainer .sidenav {
+    margin-top: 8px;
+    flex-grow: 1;
+  }
+
+    /* The navigation menu links */
+    .sideContainer .sidenav a {
+      padding: 0 10px;
+      text-decoration: none;
+      color: #818181;
+      display: block;
+      height: 48px;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .sideContainer .sidenav a .testProductImg{
+      display: block;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      margin: 0 auto;
+      text-align: center;
+      background-image: url("../assets/testProduct.png");
+      background-position: center;
+      background-origin: padding-box;
+      background-repeat: no-repeat;
+    }
+
+    .sideContainer .sidenav a:hover {
+      color:rgb(248, 86, 13);
+    }
+
+main {
+  flex-grow: 1;
+  position: relative;
+}
