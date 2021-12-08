@@ -114,6 +114,37 @@
 					}
 				}
 			}
+		},
+		"gcore-shared-library": {
+			"projectType": "library",
+			"root": "projects/gcore-shared-library",
+			"sourceRoot": "projects/gcore-shared-library/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/gcore-shared-library/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/gcore-shared-library/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/gcore-shared-library/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/gcore-shared-library/src/test.ts",
+						"tsConfig": "projects/gcore-shared-library/tsconfig.spec.json",
+						"karmaConfig": "projects/gcore-shared-library/karma.conf.js"
+					}
+				}
+			}
 		}
 	},
 	"defaultProject": "gcore-portal"

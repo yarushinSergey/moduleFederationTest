@@ -5,6 +5,12 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "paths": {
+      "gcore-shared-library": [
+        "dist/gcore-shared-library/gcore-shared-library",
+        "dist/gcore-shared-library"
+      ]
+    },
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
