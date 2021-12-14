@@ -77,6 +77,10 @@
       color: rgb(248, 86, 13);
     }
 
+    .sideContainer .sidenav a#messageSender{
+      border: solid 1px #818181;
+    }
+
   .sideContainer .sidebarDivider {
     display: flex;
     justify-content: center;

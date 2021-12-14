@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,9 @@ export class GcoreSharedLibraryService {
   private _status: Array<string> = ["Initial"];
   private _http: HttpClient;
   private _freeAPIs: Array<any>;
+
+  public incomingMessageSent = new Subject<string>();
+  public shellButtonClicked = new Subject<string>();
 
   constructor() { }
 

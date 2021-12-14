@@ -10,6 +10,7 @@ import { HttpClient } from "@angular/common/http";
 export class AppComponent  implements OnInit {
 
   private _id;
+  public message = "Init";
   constructor(private _gcoreSharedLibraryService: GcoreSharedLibraryService,
               private _http: HttpClient){
     this._gcoreSharedLibraryService.addStatus("AppComponentInitilized");
@@ -17,6 +18,10 @@ export class AppComponent  implements OnInit {
 
   ngOnInit() {
     this._gcoreSharedLibraryService.setHttpClient(this._http);
+
+    this._gcoreSharedLibraryService.incomingMessageSent.subscribe((msg:string)=>{
+      this.message = msg;
+    })
 
     this._http.get("https://api.publicapis.org/entries").subscribe({
       next: (result:any) => {
@@ -31,6 +36,10 @@ export class AppComponent  implements OnInit {
     this._id = setInterval(() => {
       console.log(this._gcoreSharedLibraryService.status);
     }, 3000);
+  }
+
+  public buttonClicked(){
+    this._gcoreSharedLibraryService.shellButtonClicked.next("Button clicked!");
   }
 
   public getTitle(): string{
